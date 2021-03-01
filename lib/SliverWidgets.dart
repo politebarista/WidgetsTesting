@@ -15,11 +15,22 @@ class SliverWidgets extends StatelessWidget {
               ),
             ),
             SliverAppBar(
-              pinned: true,
-              title: Image(
+              shadowColor: Colors.red.withOpacity(0.0),
+              flexibleSpace: Image(
                 image: NetworkImage(
                     'https://static.1000.menu/img/content/35508/shashlyk-po-kavkazski-iz-svininy_1559678139_6_max.jpg'),
               ),
+              expandedHeight: 150,
+              collapsedHeight: 150,
+              pinned: true,
+              // title: Text(
+              //   'hello',
+              //   style: TextStyle(color: Colors.red),
+              // ),
+              // title: Image(
+              //   image: NetworkImage(
+              //       'https://static.1000.menu/img/content/35508/shashlyk-po-kavkazski-iz-svininy_1559678139_6_max.jpg'),
+              // ),
               backgroundColor: Colors.red.withOpacity(0.0),
             ),
             SliverList(
@@ -27,7 +38,7 @@ class SliverWidgets extends StatelessWidget {
               return Container(
                 height: 50,
                 alignment: Alignment.center,
-                color: Colors.orange[100*index%9],
+                color: Colors.orange[100 * index % 9],
                 child: Text('list child # $index'),
               );
             }, childCount: 15))
