@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:widgets_testing/stateful_widgets_testing_and_snackbar.dart';
 
-import 'SliverWidgets.dart';
+import 'sliver_widgets.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'widgets testing',
-      home: SliverWidgets(),
+      home: StatefulWidgetsTestingAndSnackbar(),
     );
   }
 }
