@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:widgets_testing/buttons.dart';
 import 'package:widgets_testing/stateful_widgets_testing_and_snackbar.dart';
 
+import 'google_maps_widget.dart';
 import 'sliver_widgets.dart';
 
 void main() {
