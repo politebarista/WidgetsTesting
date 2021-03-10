@@ -1,63 +1,128 @@
 import 'package:flutter/material.dart';
 
 class OrderHistoryItemWidget extends StatelessWidget {
-  final Color _backgroundColor = Colors.orange;
-  final String _date = '25.05.2020';
-  final int _orderNumber = 99;
-  final String _orderStatus = 'Выдан';
-  final String _orderAddress = 'Кирова';
-  final String _orderType = 'Самовывоз';
-  final int _orderPrice = 522;
+
+  final Color _backgroundColor;
+  final String _date; //
+  final int _orderNumber; //
+  final String _orderStatus; //
+  final String _orderAddress; //
+  final String _orderType;//
+  final int _orderPrice;//
+  final Color _priceColor;
+  final Color _buttonColor;
+  final Color _topTextColor;
+  final Color _bottomTextColor;
+  final Color _buttonTextColor;
+
+  OrderHistoryItemWidget(
+    this._backgroundColor,
+    this._date,
+    this._orderNumber,
+    this._orderStatus,
+    this._orderAddress,
+    this._orderType,
+    this._orderPrice,
+    this._priceColor,
+    this._buttonColor,
+    this._topTextColor,
+    this._bottomTextColor,
+    this._buttonTextColor,
+  );
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+        decoration: BoxDecoration(
           color: _backgroundColor,
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 5, vertical: 7),
-            child: Column(
-              children: <Widget>[
-                Row(
+          borderRadius: BorderRadius.circular(12),
+        ),
+        margin: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+        child: Container(
+          padding: EdgeInsets.only(left: 8, top: 12, right: 8, bottom: 8),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Container(
+                margin: EdgeInsets.only(bottom: 8),
+                child: Row(
                   children: <Widget>[
-                    Text(_date),
+                    _topText(_date, 14),
                   ],
                 ),
-                Row(
+              ),
+              Container(
+                margin: EdgeInsets.only(bottom: 8),
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Text('№$_orderNumber'),
-                    Text('-'),
-                    Text(_orderStatus),
+                    _topText('№$_orderNumber', 18),
+                    _topText(_orderStatus),
                   ],
                 ),
-                Row(
+              ),
+              Container(
+                margin: EdgeInsets.only(bottom: 8),
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Text(_orderAddress),
-                    Text('-'),
-                    Text(_orderType),
+                    _bottomText(_orderAddress),
+                    _bottomText('-'),
+                    _bottomText(_orderType),
                   ],
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text('Заказ на сумму:'),
-                    Text('$_orderPriceР')
-                  ],
-                ),
-                GestureDetector(
-                  child: Container(
-                    color: Colors.red,
-                    child: Text('Оценить заказ'),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  _bottomText('Заказ на сумму:'),
+                  Text(
+                    '$_orderPrice Р',
+                    style: TextStyle(
+                      color: _priceColor,
+                      fontSize: 17,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                  onTap: () {},
-                )
-              ],
-            ),
-          )),
+                ],
+              ),
+              GestureDetector(
+                child: Container(
+                  margin: EdgeInsets.only(top: 8),
+                  height: 30,
+                  decoration: BoxDecoration(
+                    color: _buttonColor,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Center(
+                    child: Text(
+                      'Оценить заказ',
+                      style: TextStyle(color: _buttonTextColor),
+                    ),
+                  ),
+                ),
+                onTap: () {},
+              ),
+            ],
+          ),
+        ),
+      ),
       onTap: () {},
+    );
+  }
+
+  Widget _topText(String text, [double textSize = 16]) {
+    return Text(
+      text,
+      style: TextStyle(color: _topTextColor, fontSize: textSize),
+    );
+  }
+
+  Widget _bottomText(String text, [double textSize = 16]) {
+    return Text(
+      text,
+      style: TextStyle(color: _bottomTextColor, fontSize: textSize),
     );
   }
 }
