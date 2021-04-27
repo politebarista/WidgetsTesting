@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:widgets_testing/buttons.dart';
+import 'package:widgets_testing/play_with_gesture_detector.dart';
 import 'package:widgets_testing/stateful_widgets_testing_and_snackbar.dart';
 
 // import 'google_maps_widget.dart';
@@ -17,12 +18,8 @@ class MyApp extends StatelessWidget {
       title: 'widgets testing',
       home: Scaffold(
         appBar: AppBar(title: Text('testing'),),
-        body: Column(
-          children: <Widget>[
-            OrderHistoryItemWidget(),
-          ],
-        ),
-      )
+        body: PlayWithGestureDetector(),
+      ),
     );
   }
 }
