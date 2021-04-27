@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class PlayWithGestureDetector extends StatefulWidget {
   @override
-  _PlayWithGestureDetectorState createState() => _PlayWithGestureDetectorState();
+  _PlayWithGestureDetectorState createState() =>
+      _PlayWithGestureDetectorState();
 }
 
 class _PlayWithGestureDetectorState extends State<PlayWithGestureDetector> {
@@ -12,13 +13,19 @@ class _PlayWithGestureDetectorState extends State<PlayWithGestureDetector> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onHorizontalDragUpdate: (e) {
-        someText = 'drag start';
-        setState(() {
-
-        });
+        if (e.primaryDelta > 10) {
+          someText = 'drag start';
+          print(e);
+        }
+        setState(() {});
       },
       child: Center(
-        child: Text(someText),
+        child: Container(
+          width: 150,
+          height: 150,
+          color: Colors.green,
+          child: Text(someText),
+        ),
       ),
     );
   }
