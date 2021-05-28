@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:widgets_testing/animation_test.dart';
 import 'package:widgets_testing/buttons.dart';
 import 'package:widgets_testing/play_with_gesture_detector.dart';
 import 'package:widgets_testing/play_with_ink_well.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       title: 'widgets testing',
       home: Scaffold(
         appBar: AppBar(title: Text('testing'),),
-        body: LoadingScreen(),
+        body: AnimationTest(),
       ),
     );
   }
