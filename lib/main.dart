@@ -7,6 +7,7 @@ import 'package:widgets_testing/play_with_null.dart';
 import 'package:widgets_testing/play_with_yandex_maps.dart';
 import 'package:widgets_testing/stateful_widgets_testing_and_snackbar.dart';
 import 'package:widgets_testing/test_classes/some_math.dart';
+import 'package:widgets_testing/testing_geocoder_widget.dart';
 
 // import 'google_maps_widget.dart';
 import 'loading_screen.dart';
@@ -24,7 +25,9 @@ class MyApp extends StatelessWidget {
       title: 'widgets testing',
       home: Scaffold(
         appBar: AppBar(title: Text('testing'),),
-        body: PlayWithYandexMaps(),
+        body: LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints) {
+          return TestingGeooderWidget();
+        },),
       ),
     );
   }

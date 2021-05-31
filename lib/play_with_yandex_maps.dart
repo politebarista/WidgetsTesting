@@ -4,12 +4,30 @@ import 'package:yandex_mapkit/yandex_mapkit.dart';
 class PlayWithYandexMaps extends StatelessWidget {
   const PlayWithYandexMaps({Key key}) : super(key: key);
 
+  // YandexMapController yandexMapController = YandexMapController();
+  // var some = yandexMapController.addPlacemark(placemark)
+
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Expanded(
+    return buildSecondVersion();
+  }
+
+  Widget buildFirstVersion() {
+    return LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+      return Container(
+        width: constraints.maxWidth,
+        height: constraints.maxHeight,
+        child: Expanded(
+          child: YandexMap(),
+        ),
+      );
+    });
+  }
+
+  Widget buildSecondVersion() {
+    return Expanded(
         child: YandexMap(),
-      ),
     );
   }
 }
