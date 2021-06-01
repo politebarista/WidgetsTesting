@@ -12,6 +12,8 @@ class TestingGeooderWidget extends StatefulWidget {
 class _TestingGeooderWidgetState extends State<TestingGeooderWidget> {
   Widget locationInfoWidget = Container();
 
+  var someText;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -31,8 +33,8 @@ class _TestingGeooderWidgetState extends State<TestingGeooderWidget> {
               ),
             ),
             onTap: () {
-              Future<String> text = workWithGeolocator();
-              locationInfoWidget = buildLocationInfoWidget(text);
+              workWithGeolocator();
+              locationInfoWidget = buildLocationInfoWidget(someText);
               setState(() {});
             },
           ),
@@ -42,29 +44,29 @@ class _TestingGeooderWidgetState extends State<TestingGeooderWidget> {
     ));
   }
 
-  Widget buildLocationInfoWidget(Future<String> text) {
-    return FutureBuilder<String>(
-        future: text,
-        builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
+  Widget buildLocationInfoWidget(String text) {
+
           return Container(
             color: Colors.blue,
             child: Text(
-              snapshot.data,
+              text,
               style: TextStyle(
                 color: Colors.white,
               ),
             ),
-          );
-        });
+
+        );
   }
 
-  Future<String> workWithGeolocator() async {
+  void workWithGeolocator() async {
     bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
     await Geolocator.checkPermission();
     if (serviceEnabled == false) {
-      return 'шок, геолокация выключена';
+      someText = 'надо включить геолокацию';
     } else {
-      return 'не все еще';
+      Position currentPosition = await Geolocator.getCurrentPosition();
+      someText = "${currentPosition.latitude}, ${currentPosition.longitude}";
+      var some = someText;
     }
   }
 }
