@@ -6,6 +6,7 @@ import 'package:widgets_testing/play_with_ink_well.dart';
 import 'package:widgets_testing/play_with_null.dart';
 import 'package:widgets_testing/play_with_yandex_maps.dart';
 import 'package:widgets_testing/progress_testing.dart';
+import 'package:widgets_testing/request_testing_widget.dart';
 import 'package:widgets_testing/stateful_widgets_testing_and_snackbar.dart';
 import 'package:widgets_testing/test_classes/some_math.dart';
 import 'package:widgets_testing/testing_geocoder_widget.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(title: Text('testing'),),
         body: LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints) {
-          return ProgressTesting();
+          return RequestTestingWidget();
         },),
       ),
     );
