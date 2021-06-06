@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 
 class TestingGeooderWidget extends StatefulWidget {
-  const TestingGeooderWidget({Key key}) : super(key: key);
-
   @override
   _TestingGeooderWidgetState createState() => _TestingGeooderWidgetState();
 }

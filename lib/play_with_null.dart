@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:widgets_testing/test_classes/some_math.dart';
 
 class PlayWithNull extends StatelessWidget {
-  const PlayWithNull({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     // SomeMath someMath = SomeMath(1,2);
-    SomeMath someMath;
+    SomeMath? someMath;
     bool isAppear = someMath?.first != null;
 
     int hello = 2;

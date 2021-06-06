@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class ProgressIndicatorWidget extends StatelessWidget {
   final int progressInPercantage;
 
-  ProgressIndicatorWidget({this.progressInPercantage});
+  ProgressIndicatorWidget({required this.progressInPercantage});
 
   @override
   Widget build(BuildContext context) {

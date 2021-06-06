@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
 class AnimationTest extends StatefulWidget {
-  const AnimationTest({Key key}) : super(key: key);
 
   @override
   _AnimationTestState createState() => _AnimationTestState();
@@ -12,7 +11,7 @@ class AnimationTest extends StatefulWidget {
 
 class _AnimationTestState extends State<AnimationTest>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
+  AnimationController? _controller;
 
   @override
   void initState() {
@@ -34,10 +33,10 @@ class _AnimationTestState extends State<AnimationTest>
         child: Column(
           children: [
             AnimatedBuilder(
-              animation: _controller,
+              animation: _controller!,
               builder: (_, child) {
                 return Transform.rotate(
-                  angle: _controller.value * 1.5 * 3.14,
+                  angle: _controller!.value * 1.5 * 3.14,
                   child: child,
                 );
               },

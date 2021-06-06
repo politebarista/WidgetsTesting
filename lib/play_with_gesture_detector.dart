@@ -13,7 +13,7 @@ class _PlayWithGestureDetectorState extends State<PlayWithGestureDetector> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onHorizontalDragUpdate: (e) {
-        if (e.primaryDelta > 10) {
+        if (e.primaryDelta! > 10) {
           someText = 'drag start';
           print(e);
         }

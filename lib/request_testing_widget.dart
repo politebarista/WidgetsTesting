@@ -22,12 +22,12 @@ class _RequestTestingWidgetState extends State<RequestTestingWidget> {
             child: Text('get data'),
             color: Colors.lightGreen,
             onPressed: () async {
-              final response = await http.get(Uri.parse('http://10.0.2.2:5000/users')); // вместо http://127.0.0.1:5000/users, т.к у андоридов другой локалхост
+              final response = await http.get(Uri.parse('http://10.0.2.2:5000/login?login=iluha&password=krutoi')); // вместо http://127.0.0.1:5000/users, т.к у андоридов другой локалхост
 
               final decode = json.decode(response.body) as Map<String, dynamic>;
 
              print('check');
-              userName = decode['name'];
+              userName = decode['login'];
               setState(() {});
             },
           ),
