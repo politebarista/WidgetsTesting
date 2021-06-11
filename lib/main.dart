@@ -11,6 +11,7 @@ import 'package:widgets_testing/segment_testing_widget.dart';
 import 'package:widgets_testing/stateful_widgets_testing_and_snackbar.dart';
 import 'package:widgets_testing/test_classes/some_math.dart';
 import 'package:widgets_testing/testing_geocoder_widget.dart';
+import 'package:widgets_testing/testing_sematic.dart';
 
 // import 'google_maps_widget.dart';
 // import 'google_maps_widget.dart';
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
         ),
         body: LayoutBuilder(
           builder: (BuildContext context, BoxConstraints constraints) {
-            return SegmentTestingWidget();
+            return TestingSemantic();
           },
         ),
       ),
