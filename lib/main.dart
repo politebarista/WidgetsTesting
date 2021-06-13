@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:widgets_testing/animation_test.dart';
 import 'package:widgets_testing/buttons.dart';
+import 'package:widgets_testing/own_segmented_control.dart';
 import 'package:widgets_testing/play_with_gesture_detector.dart';
 import 'package:widgets_testing/play_with_ink_well.dart';
 import 'package:widgets_testing/play_with_null.dart';
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
         ),
         body: LayoutBuilder(
           builder: (BuildContext context, BoxConstraints constraints) {
-            return TestingSemantic();
+            return OwnSegmentedControl();
           },
         ),
       ),
