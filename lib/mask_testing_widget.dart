@@ -9,7 +9,9 @@ class MaskTestingWidget extends StatelessWidget {
       // initialText: '7',
       filter: {"#": RegExp(r'[0-9]')},
     );
-    TextEditingController textEditingController = TextEditingController(text: "+7");
+    TextEditingController textEditingController = TextEditingController(
+      // text: "+7",
+    );
     return Container(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
