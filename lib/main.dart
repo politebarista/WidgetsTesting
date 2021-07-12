@@ -17,6 +17,7 @@ import 'package:widgets_testing/testing_sematic.dart';
 // import 'google_maps_widget.dart';
 // import 'google_maps_widget.dart';
 import 'loading_screen.dart';
+import 'mask_testing_widget.dart';
 import 'order_history_item_widget.dart';
 import 'sliver_widgets.dart';
 
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
         ),
         body: LayoutBuilder(
           builder: (BuildContext context, BoxConstraints constraints) {
-            return OwnSegmentedControl();
+            return MaskTestingWidget();
           },
         ),
       ),
