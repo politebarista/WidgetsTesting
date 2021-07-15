@@ -27,18 +27,33 @@ class _BottomSheetTestingState extends State<BottomSheetTesting> {
                 builder: (context) {
                   return SizedBox(
                       height: 120,
-                      child: Center(
-                        child: ElevatedButton(
-                          onPressed: () {
-                            setState(() {
-                              containerColor = containerColor == Colors.green
-                                  ? Colors.yellow
-                                  : Colors.green;
-                              Navigator.pop(context);
-                            });
-                          },
-                          child: Text('change bcg color'),
-                        ),
+                      child: Column(
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {
+                              setState(() {
+                                containerColor = containerColor == Colors.green
+                                    ? Colors.yellow
+                                    : Colors.green;
+                                Navigator.pop(context);
+                              });
+                            },
+                            child: Text('change bcg color'),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              showModalBottomSheet(
+                                  context: context,
+                                  builder: (context) {
+                                    return SizedBox(
+                                      height: 50,
+                                      child: Text('second bottom shhet'),
+                                    );
+                                  });
+                            },
+                            child: Text('show sec screen'),
+                          ),
+                        ],
                       ));
                 },
               );
